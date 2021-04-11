@@ -5,6 +5,9 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../theme';
 import 'fontsource-roboto';
+import pokemon from 'pokemontcgsdk'
+
+pokemon.configure({apiKey: process.env.TCG_API_KEY})
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
