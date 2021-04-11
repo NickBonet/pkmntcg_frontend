@@ -7,15 +7,15 @@ function Test({ res }) {
     return (
       <Container maxWidth="xs" style={{textAlign: "center"}}>
         <Head>
-          <title>Card View</title>
+          <title>TCG Card View</title>
           <link rel="icon" href="/favicon.ico" />
         </Head> 
 
-        <Typography variant="h3" align="center">
+        <Typography variant="h3">
           TCG Card Page Example
         </Typography>
 
-        <Typography variant="h5" align="center" color="grey">
+        <Typography variant="h5">
           Card Name: {res.name}
           <br />
           Set: {res.set.name} <img src={res.set.images.symbol} width="10%" height="10%" />
