@@ -7,7 +7,7 @@ import pokemon from 'pokemontcgsdk'
 function Test({ res }) {
     return (
       <Layout>
-        <Container maxWidth="xs" style={{textAlign: "center"}}>
+        <Container style={{textAlign: "center"}}>
           <Head>
             <title>TCG Card View</title>
             <link rel="icon" href="/favicon.ico" />
@@ -20,7 +20,7 @@ function Test({ res }) {
           <Typography variant="h5">
             Card Name: {res.name}
             <br />
-            Set: {res.set.name} <img src={res.set.images.symbol} width="10%" height="10%" />
+            Set: {res.set.name} <img src={res.set.images.symbol} width="3%" height="3%" />
             <br />
             {res.number}/{res.set.printedTotal} 
           </Typography>
