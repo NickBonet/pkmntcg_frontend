@@ -1,11 +1,22 @@
 import pokemon from "pokemontcgsdk";
 import Layout from "../components/layout";
 import { Grid, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { isMobile } from "react-device-detect";
 
+const useStyles = makeStyles(() => ({
+  imgHover: {
+    transition: "transform .2s",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
+  },
+}));
+
 function Search({ res }) {
+  const classes = useStyles();
   const router = useRouter();
   const query = router.query.query;
   const cardList = [];
@@ -14,27 +25,16 @@ function Search({ res }) {
 
   // Build card grid array for the page depending on results.
   for (var i = 0; i < res.data.length; i++) {
-    if (!isMobile) {
-      cardList.push(
-        <Grid item>
-          <img
-            src={res.data[i].images.small}
-            width={cardWidth}
-            height={cardHeight}
-          />
-        </Grid>
-      );
-    } else {
-      cardList.push(
-        <Grid item xs={6} sm={6}>
-          <img
-            src={res.data[i].images.small}
-            width={cardWidth * 0.8}
-            height={cardHeight * 0.8}
-          />
-        </Grid>
-      );
-    }
+    cardList.push(
+      <Grid item xs={isMobile ? 6 : false} sm={isMobile ? 6 : false}>
+        <img
+          src={res.data[i].images.small}
+          width={isMobile ? cardWidth * 0.8 : cardWidth}
+          height={isMobile ? cardHeight * 0.8 : cardHeight}
+          className={classes.imgHover}
+        />
+      </Grid>
+    );
   }
 
   return (

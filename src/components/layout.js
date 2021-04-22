@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     cursor: "pointer",
+    transition: "color .1s ease-in",
+    "&:hover": {
+      color: "cornflowerblue",
+    },
   },
 }));
 
