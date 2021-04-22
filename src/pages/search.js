@@ -48,9 +48,9 @@ function Search({ res }) {
         justify="center"
         spacing={2}
         style={{
-          paddingLeft: "3vw",
-          paddingRight: "2vw",
-          paddingTop: "2vh",
+          paddingLeft: isMobile ? "3vw" : "10vw",
+          paddingRight: isMobile ? "2vw" : "8vw",
+          paddingTop: "1vh",
           minHeight: "90vh",
           maxWidth: "99vw",
         }}

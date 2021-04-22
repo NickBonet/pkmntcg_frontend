@@ -4,6 +4,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { isMobile } from "react-device-detect";
 
 export default function Home() {
   const router = useRouter();
@@ -14,19 +15,25 @@ export default function Home() {
       <Head>
         <title>PTCG Tracker | Home</title>
       </Head>
+      <Typography
+        variant="h3"
+        align="center"
+        style={{
+          paddingTop: "1vh",
+        }}
+      >
+        Welcome to PTCG Tracker!
+      </Typography>
       <Grid
         container
         direction="column"
         align="center"
         justify="center"
         spacing={1}
-        style={{ minHeight: "90vh", maxWidth: "100vw" }}
+        style={{ minHeight: isMobile ? "67vh" : "76vh", maxWidth: "100vw" }}
       >
         <Grid item>
-          <Typography variant="h2">Welcome to PTCG Tracker!</Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant="h5">
+          <Typography variant="h6">
             Start entering your query in the search box below to get started.
           </Typography>
         </Grid>
@@ -37,7 +44,7 @@ export default function Home() {
             cancelOnEscape="true"
             onChange={(newVal) => setSearchVal(newVal)}
             onRequestSearch={() => router.push(`/search?query=${searchVal}`)}
-            style={{ margin: "0 auto", maxWidth: "35vw" }}
+            style={{ margin: "0 auto", maxWidth: isMobile ? "95vw" : "35vw" }}
           />
         </Grid>
       </Grid>
