@@ -12,7 +12,7 @@ function Search({ res }) {
   for (var i = 0; i < res.data.length; i++) {
     cardList.push(
       <Grid item display="flex" align="center">
-        <img src={res.data[i].images.small} />
+        <img src={res.data[i].images.small} width={246} height={342} />
       </Grid>
     );
   }
