@@ -3,18 +3,38 @@ import Layout from "../components/layout";
 import { Grid, Typography } from "@material-ui/core";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { isMobile } from "react-device-detect";
 
 function Search({ res }) {
   const router = useRouter();
   const query = router.query.query;
   const cardList = [];
+  const cardWidth = 246;
+  const cardHeight = 342;
 
+  // Build card grid array for the page depending on results.
   for (var i = 0; i < res.data.length; i++) {
-    cardList.push(
-      <Grid item display="flex" align="center">
-        <img src={res.data[i].images.small} width={246} height={342} />
-      </Grid>
-    );
+    if (!isMobile) {
+      cardList.push(
+        <Grid item>
+          <img
+            src={res.data[i].images.small}
+            width={cardWidth}
+            height={cardHeight}
+          />
+        </Grid>
+      );
+    } else {
+      cardList.push(
+        <Grid item xs={6} sm={6}>
+          <img
+            src={res.data[i].images.small}
+            width={cardWidth * 0.8}
+            height={cardHeight * 0.8}
+          />
+        </Grid>
+      );
+    }
   }
 
   return (

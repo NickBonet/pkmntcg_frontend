@@ -22,22 +22,22 @@ export default function Home() {
         spacing={1}
         style={{ minHeight: "90vh", maxWidth: "100vw" }}
       >
-        <Grid item direction="column">
-          <Typography variant="h2">Welcome to TCG Card Search!</Typography>
+        <Grid item>
+          <Typography variant="h2">Welcome to PTCG Tracker!</Typography>
         </Grid>
-        <Grid item direction="column">
+        <Grid item>
           <Typography variant="h5">
             Start entering your query in the search box below to get started.
           </Typography>
         </Grid>
-        <Grid item container direction="column">
+        <Grid item direction="column">
           <SearchBar
             placeholder="Search for a card"
             value={searchVal}
             cancelOnEscape="true"
             onChange={(newVal) => setSearchVal(newVal)}
             onRequestSearch={() => router.push(`/search?query=${searchVal}`)}
-            style={{ margin: "0 auto", minWidth: "35vw" }}
+            style={{ margin: "0 auto", maxWidth: "35vw" }}
           />
         </Grid>
       </Grid>
