@@ -47,7 +47,7 @@ export default function Search({ res }) {
       <Grid
         item
         xs={isMobile(theme) ? 6 : false}
-        sm={isMobile(theme) ? 6 : false}
+        sm={isMobile(theme) ? 4 : false}
       >
         <motion.img
           variants={item}
@@ -72,7 +72,7 @@ export default function Search({ res }) {
           justify="center"
           spacing={2}
           style={{
-            paddingLeft: isMobile(theme) ? "3vw" : "10vw",
+            paddingLeft: isMobile(theme) ? "4vw" : "10vw",
             paddingRight: isMobile(theme) ? "2vw" : "8vw",
             paddingTop: "1vh",
             minHeight: "90vh",
