@@ -1,12 +1,12 @@
 import pokemon from "pokemontcgsdk";
-import Layout from "../../components/layout";
+import Layout from "../components/layout";
 import { Grid, Typography } from "@material-ui/core";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
 function Search({ res }) {
   const router = useRouter();
-  const query = router.query.searchParams;
+  const query = router.query.query;
   const cardList = [];
   var i;
 
@@ -21,10 +21,8 @@ function Search({ res }) {
   return (
     <Layout>
       <Head>
-        <title>
-          Search results for: {query[0].toUpperCase() + query.slice(1)}
-        </title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>PTCG Tracker | Search</title>
+        <link rel="icon" href="/pokeball.svg" />
       </Head>
       <Grid
         container
@@ -45,8 +43,8 @@ function Search({ res }) {
 }
 
 export const getServerSideProps = async (context) => {
-  const searchParams = context.params.searchParams;
-  const res = await pokemon.card.where({ q: `name:${searchParams}` });
+  const searchParams = context.query.query;
+  const res = await pokemon.card.where({ q: `name:"${searchParams}*"` });
   console.log(res.data.length);
 
   return { props: { res } };

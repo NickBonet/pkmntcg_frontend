@@ -37,7 +37,7 @@ export default function Home() {
             value={searchVal}
             cancelOnEscape="true"
             onChange={(newVal) => setSearchVal(newVal)}
-            onRequestSearch={() => router.push(`/search/${searchVal}`)}
+            onRequestSearch={() => router.push(`/search?query=${searchVal}`)}
             style={{ margin: "0 auto", minWidth: "35vw" }}
           />
         </Grid>
