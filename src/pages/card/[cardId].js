@@ -9,8 +9,7 @@ function CardInfo({ res }) {
     <Layout>
       <Container style={{ textAlign: "center" }}>
         <Head>
-          <title>TCG Card View</title>
-          <link rel="icon" href="/favicon.ico" />
+          <title>PTCG Tracker | Card View</title>
         </Head>
 
         <Typography variant="h3">TCG Card Page Example</Typography>

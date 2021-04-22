@@ -12,8 +12,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>TCG Card Search App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>PTCG Tracker | Home</title>
       </Head>
       <Grid
         container

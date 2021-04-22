@@ -22,7 +22,6 @@ function Search({ res }) {
     <Layout>
       <Head>
         <title>PTCG Tracker | Search</title>
-        <link rel="icon" href="/pokeball.svg" />
       </Head>
       <Grid
         container

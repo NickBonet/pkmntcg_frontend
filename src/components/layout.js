@@ -4,21 +4,20 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
+    cursor: "pointer",
   },
 }));
 
 export default function Layout({ children }) {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <div>
@@ -32,7 +31,14 @@ export default function Layout({ children }) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className={classes.title}
+            onClick={() => {
+              router.push("/");
+            }}
+          >
             TCG Card Search
           </Typography>
         </Toolbar>
