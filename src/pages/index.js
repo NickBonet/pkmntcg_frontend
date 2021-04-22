@@ -20,17 +20,17 @@ export default function Home() {
         align="center"
         justify="center"
         spacing={1}
-        style={{ minHeight: "90vh" }}
+        style={{ minHeight: "90vh", maxWidth: "100vw" }}
       >
-        <Grid item container direction="column" display="flex">
+        <Grid item direction="column">
           <Typography variant="h2">Welcome to TCG Card Search!</Typography>
         </Grid>
-        <Grid item container direction="column" display="flex">
+        <Grid item direction="column">
           <Typography variant="h5">
             Start entering your query in the search box below to get started.
           </Typography>
         </Grid>
-        <Grid item container direction="column" display="flex">
+        <Grid item container direction="column">
           <SearchBar
             placeholder="Search for a card"
             value={searchVal}
