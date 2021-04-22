@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   menuButton: {
@@ -47,8 +48,21 @@ export default function Layout({ children }) {
           </Typography>
         </Toolbar>
       </AppBar>
-
-      {children}
+      <motion.div
+        key={router.route}
+        initial="pageInit"
+        animate="pageAnim"
+        variants={{
+          pageInit: {
+            opacity: 0,
+          },
+          pageAnim: {
+            opacity: 1,
+          },
+        }}
+      >
+        {children}
+      </motion.div>
     </div>
   );
 }
