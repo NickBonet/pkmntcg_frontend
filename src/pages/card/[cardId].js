@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import Head from "next/head";
 import pokemon from "pokemontcgsdk";
 
-function Test({ res }) {
+function CardInfo({ res }) {
   return (
     <Layout>
       <Container style={{ textAlign: "center" }}>
@@ -37,4 +37,4 @@ export const getServerSideProps = async (context) => {
   return { props: { res } };
 };
 
-export default Test;
+export default CardInfo;
