@@ -96,7 +96,15 @@ export default function Search({ res }) {
 }
 
 export const getServerSideProps = async (context) => {
-  const searchParams = context.query.query;
-  const res = await pokemon.card.where({ q: `name:"${searchParams}*"` });
-  return { props: { res } };
+  try {
+    const searchParams = context.query.query;
+    const res = await pokemon.card.where({ q: `name:"${searchParams}*"` });
+    if (res.data.length === undefined || searchParams.length == 0) {
+      return { notFound: true };
+    } else {
+      return { props: { res } };
+    }
+  } catch (err) {
+    return { notFound: true };
+  }
 };

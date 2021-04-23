@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import Head from "next/head";
 import pokemon from "pokemontcgsdk";
 
-function CardInfo({ res }) {
+export default function CardInfo({ res }) {
   return (
     <Layout>
       <Container style={{ textAlign: "center" }}>
@@ -30,10 +30,15 @@ function CardInfo({ res }) {
 }
 
 export const getServerSideProps = async (context) => {
-  const cardId = context.params.cardId;
-  const res = await pokemon.card.find(cardId);
-
-  return { props: { res } };
+  try {
+    const cardId = context.params.cardId;
+    const res = await pokemon.card.find(cardId);
+    if (cardId.length == 0) {
+      return { notFound: true };
+    } else {
+      return { props: { res } };
+    }
+  } catch (err) {
+    return { notFound: true };
+  }
 };
-
-export default CardInfo;
