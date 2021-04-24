@@ -18,6 +18,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// Styling options for search result animations
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -66,7 +67,6 @@ export default function Search({ res }) {
   const router = useRouter();
   const theme = useTheme();
   const query = router.query.query;
-
   const cardList = buildCardList(res, theme);
 
   return (
