@@ -33,12 +33,8 @@ const item = {
   show: { opacity: 1 },
 };
 
-export default function Search({ res }) {
+function buildCardList(res, theme) {
   const classes = useStyles();
-  const router = useRouter();
-  const theme = useTheme();
-  const query = router.query.query;
-
   const cardList = [];
   const cardWidth = 246;
   const cardHeight = 342;
@@ -63,6 +59,15 @@ export default function Search({ res }) {
       </Grid>
     );
   }
+  return cardList;
+}
+
+export default function Search({ res }) {
+  const router = useRouter();
+  const theme = useTheme();
+  const query = router.query.query;
+
+  const cardList = buildCardList(res, theme);
 
   return (
     <Layout>
