@@ -1,12 +1,11 @@
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Layout from "../../components/layout";
 import Head from "next/head";
 import pokemon from "pokemontcgsdk";
 
 export default function CardInfo({ res }) {
   return (
-    <Layout>
+    <div>
       <Container style={{ textAlign: "center" }}>
         <Head>
           <title>PTCG Tracker | Card View</title>
@@ -25,7 +24,7 @@ export default function CardInfo({ res }) {
 
         <img src={res.images.small} />
       </Container>
-    </Layout>
+    </div>
   );
 }
 

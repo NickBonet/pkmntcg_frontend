@@ -4,8 +4,9 @@ import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../theme";
-import "fontsource-roboto";
+import "@fontsource/roboto";
 import pokemon from "pokemontcgsdk";
+import Layout from "../components/layout";
 
 pokemon.configure({ apiKey: process.env.TCG_API_KEY });
 
@@ -33,7 +34,9 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </React.Fragment>
   );

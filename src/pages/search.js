@@ -1,5 +1,4 @@
 import pokemon from "pokemontcgsdk";
-import Layout from "../components/layout";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { useRouter } from "next/router";
@@ -70,7 +69,7 @@ export default function Search({ res }) {
   const cardList = buildCardList(res, theme);
 
   return (
-    <Layout>
+    <div>
       <Head>
         <title>PTCG Tracker | Search</title>
       </Head>
@@ -96,7 +95,7 @@ export default function Search({ res }) {
           {cardList}
         </Grid>
       </motion.div>
-    </Layout>
+    </div>
   );
 }
 

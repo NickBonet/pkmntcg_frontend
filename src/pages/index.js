@@ -2,7 +2,6 @@ import { Typography, Grid } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import SearchBar from "material-ui-search-bar";
 import Head from "next/head";
-import Layout from "../components/layout";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { isMobile } from "../helpers";
@@ -13,7 +12,7 @@ export default function Home() {
   const [searchVal, setSearchVal] = useState("");
 
   return (
-    <Layout>
+    <div>
       <Head>
         <title>PTCG Tracker | Home</title>
       </Head>
@@ -42,7 +41,7 @@ export default function Home() {
             Start entering your query in the search box below to get started.
           </Typography>
         </Grid>
-        <Grid item direction="column">
+        <Grid item>
           <SearchBar
             placeholder="Search for a card"
             value={searchVal}
@@ -56,6 +55,6 @@ export default function Home() {
           />
         </Grid>
       </Grid>
-    </Layout>
+    </div>
   );
 }
