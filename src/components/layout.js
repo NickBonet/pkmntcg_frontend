@@ -9,13 +9,13 @@ import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   title: {
     cursor: "pointer",
-    transition: "color .1s ease-in",
     "@media (hover: hover)": {
       "&:hover": {
+        transition: "color .15s ease-in",
         color: "cornflowerblue",
       },
     },

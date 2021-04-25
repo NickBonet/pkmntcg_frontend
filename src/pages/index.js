@@ -33,7 +33,6 @@ export default function Home() {
         spacing={1}
         style={{
           minHeight: isMobile(theme) ? "67vh" : "76vh",
-          maxWidth: isMobile(theme) ? "102vw" : "100vw",
         }}
       >
         <Grid item>
