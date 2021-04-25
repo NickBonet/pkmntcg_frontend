@@ -33,7 +33,7 @@ export default function Home() {
         spacing={1}
         style={{
           minHeight: isMobile(theme) ? "67vh" : "76vh",
-          maxWidth: "100vw",
+          maxWidth: isMobile(theme) ? "102vw" : "100vw",
         }}
       >
         <Grid item>
@@ -45,12 +45,12 @@ export default function Home() {
           <SearchBar
             placeholder="Search for a card"
             value={searchVal}
-            cancelOnEscape="true"
+            cancelOnEscape={true}
             onChange={(newVal) => setSearchVal(newVal)}
             onRequestSearch={() => router.push(`/search?query=${searchVal}`)}
             style={{
               margin: "0 auto",
-              maxWidth: isMobile(theme) ? "95vw" : "35vw",
+              maxWidth: isMobile(theme) ? "92vw" : "35vw",
             }}
           />
         </Grid>
