@@ -4,26 +4,16 @@
       "id": "np-2",
       "name": "Groudon ex",
       "supertype": "Pokémon",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
+      "subtypes": ["Basic", "EX"],
       "hp": "120",
-      "types": [
-        "Fighting"
-      ],
+      "types": ["Fighting"],
       "rules": [
         "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
       ],
       "attacks": [
         {
           "name": "Major Earthquake",
-          "cost": [
-            "Fighting",
-            "Fighting",
-            "Fighting",
-            "Fighting"
-          ],
+          "cost": ["Fighting", "Fighting", "Fighting", "Fighting"],
           "convertedEnergyCost": 4,
           "damage": "80",
           "text": "Discard a Fighting Energy card attached to Groudon ex. Does 10 damage to your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
@@ -35,11 +25,7 @@
           "value": "×2"
         }
       ],
-      "retreatCost": [
-        "Colorless",
-        "Colorless",
-        "Colorless"
-      ],
+      "retreatCost": ["Colorless", "Colorless", "Colorless"],
       "convertedRetreatCost": 3,
       "set": {
         "id": "np",
@@ -61,9 +47,7 @@
       "number": "2",
       "artist": "Kazuo Yazawa",
       "rarity": "Promo",
-      "nationalPokedexNumbers": [
-        383
-      ],
+      "nationalPokedexNumbers": [383],
       "legalities": {
         "unlimited": "Legal"
       },
@@ -96,14 +80,9 @@
       "id": "np-38",
       "name": "Groudon ex",
       "supertype": "Pokémon",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
+      "subtypes": ["Basic", "EX"],
       "hp": "100",
-      "types": [
-        "Fighting"
-      ],
+      "types": ["Fighting"],
       "rules": [
         "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
       ],
@@ -117,21 +96,14 @@
       "attacks": [
         {
           "name": "Mix-Up",
-          "cost": [
-            "Fighting",
-            "Colorless"
-          ],
+          "cost": ["Fighting", "Colorless"],
           "convertedEnergyCost": 2,
           "damage": "30",
           "text": "Flip a coin. If heads, your opponent discards the top card from his or her deck."
         },
         {
           "name": "Earthquake",
-          "cost": [
-            "Fighting",
-            "Colorless",
-            "Colorless"
-          ],
+          "cost": ["Fighting", "Colorless", "Colorless"],
           "convertedEnergyCost": 3,
           "damage": "60",
           "text": "Does 10 damage to each of your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
@@ -143,10 +115,7 @@
           "value": "×2"
         }
       ],
-      "retreatCost": [
-        "Colorless",
-        "Colorless"
-      ],
+      "retreatCost": ["Colorless", "Colorless"],
       "convertedRetreatCost": 2,
       "set": {
         "id": "np",
@@ -168,9 +137,7 @@
       "number": "38",
       "artist": "Ryo Ueda",
       "rarity": "Promo",
-      "nationalPokedexNumbers": [
-        383
-      ],
+      "nationalPokedexNumbers": [383],
       "legalities": {
         "unlimited": "Legal"
       },
@@ -196,15 +163,10 @@
       "id": "ex14-93",
       "name": "Groudon ex",
       "supertype": "Pokémon",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
+      "subtypes": ["Basic", "EX"],
       "level": "ex",
       "hp": "100",
-      "types": [
-        "Fighting"
-      ],
+      "types": ["Fighting"],
       "rules": [
         "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
       ],
@@ -218,11 +180,7 @@
       "attacks": [
         {
           "name": "Power Blast",
-          "cost": [
-            "Fighting",
-            "Fighting",
-            "Colorless"
-          ],
+          "cost": ["Fighting", "Fighting", "Colorless"],
           "convertedEnergyCost": 3,
           "damage": "100",
           "text": "Discard 2 Energy attached to Groudon ex."
@@ -234,10 +192,7 @@
           "value": "×2"
         }
       ],
-      "retreatCost": [
-        "Colorless",
-        "Colorless"
-      ],
+      "retreatCost": ["Colorless", "Colorless"],
       "convertedRetreatCost": 2,
       "set": {
         "id": "ex14",
@@ -259,9 +214,7 @@
       "number": "93",
       "artist": "Takabon",
       "rarity": "Rare Holo EX",
-      "nationalPokedexNumbers": [
-        383
-      ],
+      "nationalPokedexNumbers": [383],
       "legalities": {
         "unlimited": "Legal"
       },
@@ -287,15 +240,10 @@
       "id": "ex5-93",
       "name": "Groudon ex",
       "supertype": "Pokémon",
-      "subtypes": [
-        "Basic",
-        "EX"
-      ],
+      "subtypes": ["Basic", "EX"],
       "level": "ex",
       "hp": "100",
-      "types": [
-        "Fighting"
-      ],
+      "types": ["Fighting"],
       "rules": [
         "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
       ],
@@ -309,21 +257,14 @@
       "attacks": [
         {
           "name": "Rock Tumble",
-          "cost": [
-            "Colorless",
-            "Colorless"
-          ],
+          "cost": ["Colorless", "Colorless"],
           "convertedEnergyCost": 2,
           "damage": "30",
           "text": "This attack's damage is not affected by Resistance."
         },
         {
           "name": "Crushing Mantle",
-          "cost": [
-            "Fighting",
-            "Fighting",
-            "Colorless"
-          ],
+          "cost": ["Fighting", "Fighting", "Colorless"],
           "convertedEnergyCost": 3,
           "damage": "50+",
           "text": "You may discard from your hand as many Energy cards as you like. If you do, this attack does 50 damage plus 10 more damage for each Energy card you discarded."
@@ -335,11 +276,7 @@
           "value": "×2"
         }
       ],
-      "retreatCost": [
-        "Colorless",
-        "Colorless",
-        "Colorless"
-      ],
+      "retreatCost": ["Colorless", "Colorless", "Colorless"],
       "convertedRetreatCost": 3,
       "set": {
         "id": "ex5",
@@ -361,9 +298,7 @@
       "number": "93",
       "artist": "Hikaru Koike",
       "rarity": "Rare Holo EX",
-      "nationalPokedexNumbers": [
-        383
-      ],
+      "nationalPokedexNumbers": [383],
       "legalities": {
         "unlimited": "Legal"
       },
