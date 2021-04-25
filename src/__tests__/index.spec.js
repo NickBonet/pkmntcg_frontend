@@ -2,18 +2,7 @@ import { mount } from "enzyme";
 import Home from "../pages/index";
 import { Typography, Grid } from "@material-ui/core";
 import SearchBar from "material-ui-search-bar";
-import mediaQuery from "css-mediaquery";
 import router from "next/router";
-
-// As per MUI docs for polyfilling matchMedia
-// https://material-ui.com/components/use-media-query/#testing
-function createMatchMedia(width) {
-  return (query) => ({
-    matches: mediaQuery.match(query, { width: width }),
-    addListener: () => {},
-    removeListener: () => {},
-  });
-}
 
 let wrap;
 
