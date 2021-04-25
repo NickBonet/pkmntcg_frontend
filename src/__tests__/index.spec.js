@@ -51,6 +51,7 @@ describe("Pages", () => {
 
   describe("Index on mobile", () => {
     beforeAll(() => {
+      // eslint-disable-next-line no-undef
       window.matchMedia = createMatchMedia(600);
     });
 

@@ -1,21 +1,11 @@
 import pokemon from "pokemontcgsdk";
 import { Grid, Typography } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import Head from "next/head";
 import { isMobile } from "../helpers";
+import { buildCardList } from "../logic/searchLogic";
 import { motion } from "framer-motion";
-
-const useStyles = makeStyles(() => ({
-  imgHover: {
-    transition: "transform .2s",
-    "&:hover": {
-      transform: "scale(1.05)",
-      cursor: "pointer",
-    },
-  },
-}));
 
 // Styling options for search result animations
 const container = {
@@ -27,41 +17,6 @@ const container = {
     },
   },
 };
-
-const item = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
-
-function buildCardList(res, theme) {
-  const classes = useStyles();
-  const cardList = [];
-  const cardWidth = 246;
-  const cardHeight = 342;
-
-  // Build card grid array for the page depending on results.
-  for (var i = 0; i < res.data.length; i++) {
-    cardList.push(
-      <Grid
-        item
-        key={i}
-        xs={isMobile(theme) ? 6 : false}
-        sm={isMobile(theme) ? 4 : false}
-      >
-        <Link href={`/card/${res.data[i].id}`}>
-          <motion.img
-            variants={item}
-            src={res.data[i].images.small}
-            width={isMobile(theme) ? cardWidth * 0.8 : cardWidth}
-            height={isMobile(theme) ? cardHeight * 0.8 : cardHeight}
-            className={classes.imgHover}
-          />
-        </Link>
-      </Grid>
-    );
-  }
-  return cardList;
-}
 
 export default function Search({ res }) {
   const router = useRouter();
