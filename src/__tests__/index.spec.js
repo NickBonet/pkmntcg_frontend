@@ -18,25 +18,25 @@ jest.mock("next/router", () => require("next-router-mock"));
 
 describe("Pages", () => {
   describe("Index", () => {
-    it("Should render successfully", function () {
+    it("Should render successfully", () => {
       expect(wrap.find(Typography).at(0).text()).toEqual(
         "Welcome to PTCG Tracker!"
       );
     });
 
-    it("Should render the search bar on desktop", function () {
+    it("Should render the search bar on desktop", () => {
       const search = wrap.find(SearchBar);
       expect(search).toHaveLength(1);
       expect(search.prop("placeholder")).toEqual("Search for a card");
       expect(search.prop("style")).toHaveProperty("maxWidth", "35vw");
     });
 
-    it("Should adjust grid height on desktop", function () {
+    it("Should adjust grid height on desktop", () => {
       const grid = wrap.find(Grid).at(0);
       expect(grid.prop("style")).toHaveProperty("minHeight", "76vh");
     });
 
-    test("Search bar input changes and button pushes right path", function () {
+    test("Search bar input changes and button pushes right path", () => {
       const search = wrap.find("input").first();
       search.simulate("change", { target: { value: "charizard" } });
       expect(wrap.find("input").prop("value")).toEqual("charizard");
@@ -54,12 +54,12 @@ describe("Pages", () => {
       window.matchMedia = createMatchMedia(600);
     });
 
-    it("Should adjust grid height on mobile", function () {
+    it("Should adjust grid height on mobile", () => {
       const grid = wrap.find(Grid).at(0);
       expect(grid.prop("style")).toHaveProperty("minHeight", "67vh");
     });
 
-    it("Should render the search bar on mobile", function () {
+    it("Should render the search bar on mobile", () => {
       const search = wrap.find(SearchBar);
       expect(search).toHaveLength(1);
       expect(search.prop("placeholder")).toEqual("Search for a card");
