@@ -3,6 +3,7 @@ import Home from "../pages/index";
 import { Typography, Grid } from "@material-ui/core";
 import SearchBar from "material-ui-search-bar";
 import mediaQuery from "css-mediaquery";
+import router from "next/router";
 
 // As per MUI docs for polyfilling matchMedia
 // https://material-ui.com/components/use-media-query/#testing
@@ -24,6 +25,8 @@ afterEach(() => {
   wrap.unmount();
 });
 
+jest.mock("next/router", () => require("next-router-mock"));
+
 describe("Pages", () => {
   describe("Index", () => {
     it("Should render successfully", function () {
@@ -42,6 +45,18 @@ describe("Pages", () => {
     it("Should adjust grid height on desktop", function () {
       const grid = wrap.find(Grid).at(0);
       expect(grid.prop("style")).toHaveProperty("minHeight", "76vh");
+    });
+
+    test("Search bar input changes and button pushes right path", function () {
+      const search = wrap.find("input").first();
+      search.simulate("change", { target: { value: "charizard" } });
+      expect(wrap.find("input").prop("value")).toEqual("charizard");
+      wrap.find("button").at(0).simulate("click");
+      expect(router).toMatchObject({
+        asPath: "/search?query=charizard",
+        pathname: "/search",
+        query: { query: "charizard" },
+      });
     });
   });
 
