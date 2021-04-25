@@ -44,6 +44,7 @@ function buildCardList(res, theme) {
     cardList.push(
       <Grid
         item
+        key={i}
         xs={isMobile(theme) ? 6 : false}
         sm={isMobile(theme) ? 4 : false}
       >
