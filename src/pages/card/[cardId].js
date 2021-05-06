@@ -22,7 +22,12 @@ export default function CardInfo({ res }) {
           {res.number}/{res.set.printedTotal}
         </Typography>
 
-        <img src={res.images.small} />
+        <img
+          src={res.images.small}
+          style={{
+            borderRadius: "4%",
+          }}
+        />
       </Container>
     </div>
   );

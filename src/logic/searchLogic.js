@@ -7,6 +7,7 @@ import { Grid } from "@material-ui/core";
 // Styling for image hover effect on cards
 const useStyles = makeStyles(() => ({
   imgHover: {
+    borderRadius: "4%",
     transition: "transform .2s",
     "&:hover": {
       transform: "scale(1.05)",
